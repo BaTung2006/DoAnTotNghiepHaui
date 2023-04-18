@@ -1077,3 +1077,7 @@ D:\.NET MVC\FPT\FaFimCinema\CGV\obj\Debug\CGV.csproj.CoreCompileInputs.cache
 D:\.NET MVC\FPT\FaFimCinema\CGV\obj\Debug\CGV.csproj.CopyComplete
 D:\.NET MVC\FPT\FaFimCinema\CGV\obj\Debug\CGV.dll
 D:\.NET MVC\FPT\FaFimCinema\CGV\obj\Debug\CGV.pdb
+D:\Đồ án\Báo cáo\Báo cáo\CGV\obj\Debug\CGV.csproj.AssemblyReference.cache
+D:\Đồ án\Báo cáo\Báo cáo\CGV\obj\Debug\CGV.csproj.CoreCompileInputs.cache
+D:\Đồ án\Báo cáo\Báo cáo\CGV\obj\Debug\CGV.dll
+D:\Đồ án\Báo cáo\Báo cáo\CGV\obj\Debug\CGV.pdb
