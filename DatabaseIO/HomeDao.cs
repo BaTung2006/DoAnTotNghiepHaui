@@ -19,26 +19,12 @@ namespace DatabaseIO
         {
             try {
                 var today = DateTime.Now;
-                return mydb.films.OrderBy(x => x.id).ToList();
+                return mydb.films.Where(x => x.premiere_date > today).OrderBy(x => x.premiere_date).ToList();
                 //return mydb.Database.SqlQuery<film>("SELECT * FROM films WHERE CONVERT(varchar, premiere_date, 101) > CONVERT(varchar, getdate(), 101)").ToList();
             } catch (Exception ex) {
                 Console.WriteLine(ex.Message);
                 return null;
             }       
-        }
-
-        public List<film> getAll()
-        {
-            try
-            {
-                return mydb.films.OrderBy(x => x.id).ToList();
-                //return mydb.Database.SqlQuery<film>("SELECT * FROM films WHERE CONVERT(varchar, premiere_date, 101) > CONVERT(varchar, getdate(), 101)").ToList();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return null;
-            }
         }
 
         /**
@@ -51,7 +37,7 @@ namespace DatabaseIO
                 var today = DateTime.Now;
                 var dueday = today.AddDays(7);
                 var idfilms = mydb.schedules.Where(x => x.dateschedule >= today && x.dateschedule <= dueday).Select(x => x.film_id).Distinct().ToList();
-                return mydb.films.OrderBy(x => x.id).ToList();
+                return mydb.films.Where(x => idfilms.Contains(x.id)).ToList();
                 /*return mydb.Database.SqlQuery<film>("SELECT * FROM films WHERE CONVERT(varchar, premiere_date, 101) <= CONVERT(varchar, getdate(), 101)").ToList();*/
                 // return mydb.Database.SqlQuery<film>("SELECT * FROM films WHERE id in (Select film_id From schedules Where CONVERT(varchar, dateschedule, 101) = CONVERT(varchar, getdate(), 101) )").ToList();
             } catch (Exception ex) {
